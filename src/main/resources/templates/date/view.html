@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+    <body class="container" th:object="${date}">
+
+        <nav th:replace="fragments :: navigation"></nav>
+        <h1 th:text="${date.name}"></h1>
+        <ul>
+            <li th:each="employee : ${date.employees}" th:text="${employee.name}">
+            </li>
+        </ul>
+        <p><a th:href="'/date/add-item/' + ${date.id}">Add Employee</a></p>
+
+    </body>
+</html>

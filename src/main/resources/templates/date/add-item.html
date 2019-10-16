@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
+
+        <nav th:replace="fragments :: navigation"></nav>
+
+        <form method="post" th:object="${form}" action="/date/add-item">
+
+            <div class="form-group">
+                <label th:for="employeeId">Employee</label>
+                <select name="employeeId">
+                    <option th:each="employee : *{employees}"
+                            th:text="${employee.name}"
+                            th:value="${employee.id}"></option>
+
+                </select>
+            </div>
+
+            <input type="hidden" name="dateId" th:value="*{date.id}" />
+
+            <input type="submit" value="Add Employee"/>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container" th:object="${workHours}">
+
+<nav th:replace="fragments :: navigation"></nav>
+<h1> Time Sheet </h1>
+<ul>
+    <li th:each="entry : ${timeEntry}" th:text="'Clock in time: ' + ${entry.clockOut} +' Clock out time: ' + ${entry.clockIn}">
+    </li>
+</ul>
+
+
+</body>
+</html>

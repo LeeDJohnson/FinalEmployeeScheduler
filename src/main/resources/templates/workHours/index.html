@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+<table class="table">
+
+    <tr>
+        <th>All Employees</th>
+    </tr>
+
+    <tr th:each="employee : ${employees}">
+        <td><a th:href="'/workHours/view/' + ${employee.id}" th:text="${employee.name}" ></a></td>
+    </tr>
+
+</table>
+
+<a href="/workHours/add">Enter Time</a>
+
+</body>
+</html>

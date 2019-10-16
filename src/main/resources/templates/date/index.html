@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+
+    <body class="container">
+
+        <nav th:replace="fragments :: navigation"></nav>
+
+
+        <table class="table">
+
+            <tr>
+                <th>Date</th>
+            </tr>
+
+            <tr th:each="date : ${dates}">
+                <td><a th:href="'/date/view/' + ${date.id}" th:text="${date.name}" ></a></td>
+            </tr>
+
+        </table>
+
+        <a href="/date/add">Add a Work Schedule</a>
+
+    </body>
+</html>

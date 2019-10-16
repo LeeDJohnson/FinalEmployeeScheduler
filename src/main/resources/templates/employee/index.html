@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+
+
+<p th:unless="${employees} and ${employees.size()}">You have not added any employees</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Years of Experience</th>
+        <th>Position</th>
+    </tr>
+
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.description}"></td>
+        <td th:text="${employee.position != null ? employee.position.name: 'No position set'}"></td>
+    </tr>
+
+</table>
+
+<nav>
+    <a href="/employee/add">Add</a> |
+    <a href="/employee/remove">Remove</a>
+
+</nav>
+
+</body>
+</html>
