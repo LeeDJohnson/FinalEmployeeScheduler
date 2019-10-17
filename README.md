@@ -1,4 +1,4 @@
-# FinalEmployeeScheduler
+# EmployeeScheduler
 
 Expense Tracker is a web application which allows users to create and view work schedules and time entry.
 
